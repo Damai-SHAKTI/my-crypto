@@ -13,7 +13,7 @@ export default function TextField({ buttonText, getTheme, Themes, getAlgorithm }
         document.getElementById(textareaid).value = null;
     }
 
-    const ED = (textareaid) => {
+    const EncryptDecrypt = (textareaid) => {
         let text = document.getElementById(textareaid).value;
         if (getAlgorithm === "base64"){
             if (textareaid === "Decode" ){
@@ -81,7 +81,7 @@ export default function TextField({ buttonText, getTheme, Themes, getAlgorithm }
             <textarea style={getTheme === Themes[0].color ? textareaStyle[1] : textareaStyle[0]} className="form-control" id={buttonText} rows="8" placeholder="Enter Here"></textarea>
         </div>
         <div style={buttondivStyle}>
-            <button onClick={() => ED(buttonText)} type="button" className="btn btn-success" style={buttonStyle}>{buttonText}</button>
+            <button onClick={() => EncryptDecrypt(buttonText)} type="button" className="btn btn-success" style={buttonStyle}>{buttonText}</button>
             <button onClick={() => ClearTextArea(buttonText)} type="button" className="btn btn-danger" style={buttonStyle}>Clear</button>
             <button onClick={() => CopyToClipboard(buttonText)} type="button" className="btn btn-light" style={buttonStyle}><i className="bi bi-clipboard"></i> Copy to clipboard</button>
         </div>
